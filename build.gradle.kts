@@ -18,9 +18,14 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
+	// Standard libraries
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+	// Spring Boot
+	implementation("org.springframework.boot:spring-boot-starter")
+
+	// Testing libraries
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
