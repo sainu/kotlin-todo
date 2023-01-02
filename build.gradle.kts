@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.0.2-SNAPSHOT"
-	id("io.spring.dependency-management") version "1.1.0"
-	kotlin("jvm") version "1.7.22"
-	kotlin("plugin.spring") version "1.7.22"
+	id(Deps.Plugin.SpringBoot.id) version Deps.Plugin.SpringBoot.version
+	id(Deps.Plugin.SpringDependencyManagement.id) version Deps.Plugin.SpringDependencyManagement.version
+	kotlin(Deps.Plugin.KotlinJVM.id) version Deps.Plugin.KotlinJVM.version
+	kotlin(Deps.Plugin.KotlinSpring.id) version Deps.Plugin.KotlinSpring.version
 }
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = Deps.javaVersion
 
 repositories {
 	mavenCentral()
@@ -23,19 +23,19 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
 	// Spring Boot
-	implementation("org.springframework.boot:spring-boot-starter")
+	implementation(Deps.SpringBoot.starter)
 
 	// Dev tools
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	developmentOnly(Deps.SpringBoot.devTools)
 
 	// Testing libraries
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation(Deps.SpringBoot.starterTest)
 }
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "17"
+		jvmTarget = Deps.javaVersion.toString()
 	}
 }
 
