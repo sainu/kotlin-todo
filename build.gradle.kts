@@ -24,6 +24,7 @@ dependencies {
 
 	// Spring Boot
 	implementation(Deps.SpringBoot.starter)
+	implementation(Deps.SpringBoot.starterWeb)
 
 	// Dev tools
 	developmentOnly(Deps.SpringBoot.devTools)

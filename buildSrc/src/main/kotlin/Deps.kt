@@ -30,5 +30,6 @@ object Deps {
         const val starter = "org.springframework.boot:spring-boot-starter"
         const val devTools = "org.springframework.boot:spring-boot-devtools"
         const val starterTest = "org.springframework.boot:spring-boot-starter-test"
+        const val starterWeb = "org.springframework.boot:spring-boot-starter-web"
     }
 }
